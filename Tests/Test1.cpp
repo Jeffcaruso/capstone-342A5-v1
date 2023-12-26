@@ -57,13 +57,13 @@ TEST(Test1, testingOutAddContains)
 	EXPECT_EQ(es.getEnrolledCourses(1070), expectedAns);
 	string c342byLastName =
 	    "[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly
-	    (1223), " "Henderson, Daniel (1364), Taylor, Alexander (1986),
-	    Thompson, Christine " "(1386), Watson, Alex (1211)]";
+	    (1223), Henderson, Daniel (1364), Taylor, Alexander (1986),
+	    Thompson, Christine (1386), Watson, Alex (1211)]";
 	EXPECT_EQ(es.getClassListByLastName("CSS342"), c342byLastName);
 	string c342byID =
-	    "[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly "
-	    "(1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, "
-	    "Juan (1401), Taylor, Alexander (1986)]";
+	    "[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly 
+	    (1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, 
+	    Juan (1401), Taylor, Alexander (1986)]";
 	EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
 
 }
