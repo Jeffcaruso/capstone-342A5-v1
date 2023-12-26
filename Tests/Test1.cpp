@@ -6,8 +6,10 @@
 //==========================================================n==================
 
 #include <gtest/gtest.h>
-#include "applib/skiplist.h"
-#include "applib/random.h"
+#include "applib/enrollmentsystem.h"
+#include "applib/course.h"
+#include "applib/student.h"
+#include "applib/university.h"
 
 #include <iostream>
 #include <sstream>
@@ -64,5 +66,5 @@ TEST(Test1, testingOutAddContains)
 	    "(1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, "
 	    "Juan (1401), Taylor, Alexander (1986)]"
 	EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
-	
+
 }
