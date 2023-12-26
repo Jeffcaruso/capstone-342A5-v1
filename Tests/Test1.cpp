@@ -38,16 +38,21 @@ TEST(Test1, testingOutAddContains)
 	ASSERT_TRUE(es.readEnrollmentInfo("data-enrollments.txt"));
 
 
-
 	// Check courses (use expect in gTest)
 	// Expect b/c, if these fail, later items could still at least be somewhat informative.
 	// assert(!es.addCourse(999, "CSS342"));
+	EXPECT_FALSE(es.addCourse(999, "CSS342"));
 	// assert(!es.addCourse(1070, "CSS3422"));
+	EXPECT_FALSE(es.addCourse(1070, "CSS3422"));
 	// assert(!es.isInCourse(1070, "CSS342"));
+	EXPECT_FALSE(es.isInCourse(1070, "CSS342"));
 	// assert(es.addCourse(1070, "CSS342"));
+	EXPECT_TRUE(es.addCourse(1070, "CSS342"));
 	// assert(es.dropCourse(1070, "CSS343"));
-	// assert(es.getCourseTitle("CSS342") ==
-	//        "Data Structures, Algorithms, and Discrete Mathematics I");
+	EXPECT_TRUE(es.dropCourse(1070, "CSS343"));
+	expectedAns = "Data Structures, Algorithms, and Discrete Mathematics I";
+	EXPECT_EQ(es.getCourseTitle("CSS342"), expectedAns);
+
 
 	// Check enrollments (use expect in gTest)
 	// Expect b/c, if these fail, later items could still at least be somewhat informative.
