@@ -18,7 +18,8 @@ using namespace std;
 // check enrollment system (the only & comprehensive test...)
 TEST(Test1, testingOutAddContains)
 {
-	// initial setup (use assert in gTest)
+	// Initial setup (use assert in gTest)
+	// Assert b/c, if these fail, later items make no sense.
 	EnrollmentSystem es;
 	ASSERT_TRUE(es.addUniversity("UWB"));
 	ASSERT_FALSE(es.addUniversity("UWB"));
@@ -30,13 +31,16 @@ TEST(Test1, testingOutAddContains)
 	ASSERT_EQ(es.getUniversityName(), expectedAns);
 
 
-	// // read data (use assert in gTest)
-	// assert(es.readCourseList("data-courses.txt"));
-	// assert(es.readStudentList("data-students.txt"));
-	// assert(es.readEnrollmentInfo("data-enrollments.txt"));
+	// Read data (use assert in gTest)
+	// Assert b/c, if these fail, later items make no sense.
+	ASSERT_TRUE(es.readCourseList("data-courses.txt"));
+	ASSERT_TRUE(es.readStudentList("data-students.txt"));
+	ASSERT_TRUE(es.readEnrollmentInfo("data-enrollments.txt"));
 
 
-	// // check courses (use expect in gTest)
+
+	// Check courses (use expect in gTest)
+	// Expect b/c, if these fail, later items could still at least be somewhat informative.
 	// assert(!es.addCourse(999, "CSS342"));
 	// assert(!es.addCourse(1070, "CSS3422"));
 	// assert(!es.isInCourse(1070, "CSS342"));
@@ -45,7 +49,8 @@ TEST(Test1, testingOutAddContains)
 	// assert(es.getCourseTitle("CSS342") ==
 	//        "Data Structures, Algorithms, and Discrete Mathematics I");
 
-	// // check enrollments (use expect in gTest)
+	// Check enrollments (use expect in gTest)
+	// Expect b/c, if these fail, later items could still at least be somewhat informative.
 	// assert(es.getEnrolledCourses(1070) == "[CSS110, CSS173, CSS342]");
 	// string c342byLastName =
 	//     "[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly
