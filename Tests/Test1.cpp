@@ -1,7 +1,7 @@
 //============================================================================
 // Name        : Test1
-// Test Desc.  : testing basic operations: operator<<, add, contains for SkipList
-// Author      : Jeffrey Caruso
+// Test Desc.  : comprehensive testing of the enrollment system (everything)
+// Author      : Yusuf Pisan pisan@uw.edu, Jeffrey Caruso
 // Date    	   : Fall 2023
 //==========================================================n==================
 
@@ -26,10 +26,12 @@ TEST(Test1, testingOutAddContains)
   // assert(!es.setCurrentUniversity("UWx"));
   // assert(es.setCurrentUniversity("UWB"));
   // assert(es.getUniversityName() == "UWB");
+
   // // read data
   // assert(es.readCourseList("data-courses.txt"));
   // assert(es.readStudentList("data-students.txt"));
   // assert(es.readEnrollmentInfo("data-enrollments.txt"));
+  
   // // check courses
   // assert(!es.addCourse(999, "CSS342"));
   // assert(!es.addCourse(1070, "CSS3422"));
@@ -38,6 +40,7 @@ TEST(Test1, testingOutAddContains)
   // assert(es.dropCourse(1070, "CSS343"));
   // assert(es.getCourseTitle("CSS342") ==
   //        "Data Structures, Algorithms, and Discrete Mathematics I");
+
   // // check enrollments
   // assert(es.getEnrolledCourses(1070) == "[CSS110, CSS173, CSS342]");
   // string c342byLastName =
@@ -51,6 +54,4 @@ TEST(Test1, testingOutAddContains)
   //     "(1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, "
   //     "Juan (1401), Taylor, Alexander (1986)]";
   // assert(es.getClassListByID("CSS342") == c342byID);
-
-
 }

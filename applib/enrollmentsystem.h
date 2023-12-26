@@ -1,3 +1,10 @@
+//============================================================================
+// Name        : enrollment system declaration
+// File Desc.  : declare the enrollment system class
+// Author(s)   : Yusuf Pisan pisan@uw.edu, Jeffrey Caruso
+// Date    	   : Fall 2023 - Winter 2024
+//============================================================================
+
 #ifndef ENROLLMENTSYSTEM_H
 #define ENROLLMENTSYSTEM_H
 

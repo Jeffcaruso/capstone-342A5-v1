@@ -1,3 +1,10 @@
+//============================================================================
+// Name        : enrollment system implementation
+// File Desc.  : implement the enrollment system class
+// Author(s)   : Yusuf Pisan pisan@uw.edu, Jeffrey Caruso
+// Date    	   : Fall 2023 - Winter 2024
+//============================================================================
+
 #include "enrollmentsystem.h"
 #include "university.h"
 
