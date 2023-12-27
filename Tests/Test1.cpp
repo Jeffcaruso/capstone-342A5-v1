@@ -55,12 +55,29 @@ TEST(Test1, testingOutAddContains)
 	// Expect b/c, if these fail, later items could still at least be somewhat informative.
 	expectedAns = "[CSS110, CSS173, CSS342]";
 	EXPECT_EQ(es.getEnrolledCourses(1070), expectedAns);
-	//idea 1, making the entire string on the same line.
+
+	//option 1, making the entire string on the same line.
 	//not ideal for legibility, but if it works, could be ok.
-	string c342byLastName = "[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223), Henderson, Daniel (1364), Taylor, Alexander (1986), Thompson, Christine (1386), Watson, Alex (1211)]";
+	// string c342byLastName = "[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223), Henderson, Daniel (1364), Taylor, Alexander (1986), Thompson, Christine (1386), Watson, Alex (1211)]";
+	// EXPECT_EQ(es.getClassListByLastName("CSS342"), c342byLastName);
+	// string c342byID =	    "[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly (1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, Juan (1401), Taylor, Alexander (1986)]";
+	// EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
+
+	//maybe any more legible ideas...?
+	//option 2 "" + "" + "";
+	string c342byLastName =
+	"[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223)," +
+	" Henderson, Daniel(1364), Taylor, Alexander(1986), Thompson, Christine " +
+	"(1386), Watson, Alex (1211)]";
 	EXPECT_EQ(es.getClassListByLastName("CSS342"), c342byLastName);
-	string c342byID =	    "[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly (1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, Juan (1401), Taylor, Alexander (1986)]";
+	string c342byID =
+		"[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly " +
+		"(1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, " +
+		"Juan (1401), Taylor, Alexander (1986)]";
 	EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
 
-	//maybe any more readable ideas...?
+
+	// option 3  ...? (something else...?)
+
+
 }
