@@ -91,4 +91,7 @@ TEST(Test1, testingOutAddContains)
 	Juan (1401), Taylor, Alexander (1986)]
 	)"""";
 	EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
+
+	//for now, I will use option 3. If that has issues with testing with solution code, move to option 1.
+		
 }
