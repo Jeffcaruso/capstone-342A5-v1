@@ -56,28 +56,39 @@ TEST(Test1, testingOutAddContains)
 	expectedAns = "[CSS110, CSS173, CSS342]";
 	EXPECT_EQ(es.getEnrolledCourses(1070), expectedAns);
 
-	//option 1, making the entire string written on the same line.
-	//not ideal for legibility, but if it works, could be ok.
+	// //option 1, making the entire string written on the same line.
+	// //not ideal for legibility, but if it works, could be ok.
 	// string c342byLastName = "[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223), Henderson, Daniel (1364), Taylor, Alexander (1986), Thompson, Christine (1386), Watson, Alex (1211)]";
 	// EXPECT_EQ(es.getClassListByLastName("CSS342"), c342byLastName);
 	// string c342byID =	    "[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly (1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, Juan (1401), Taylor, Alexander (1986)]";
 	// EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
 
 	//maybe any more legible ideas...?
-	//option 2 "" + "" + "";
-	string a = "[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223),";
-	string b = " Henderson, Daniel(1364), Taylor, Alexander(1986), Thompson, Christine ";
-	string c = "(1386), Watson, Alex (1211)]";
-	string c342byLastName = a + b + c;
+	// //option 2 "" + "" + "";
+	// string a = "[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223),";
+	// string b = " Henderson, Daniel(1364), Taylor, Alexander(1986), Thompson, Christine ";
+	// string c = "(1386), Watson, Alex (1211)]";
+	// string c342byLastName = a + b + c;
 
-	EXPECT_EQ(es.getClassListByLastName("CSS342"), c342byLastName);
-	a = "[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly ";
-	b = "(1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, ";
-	c = "Juan (1401), Taylor, Alexander (1986)]";
-	string c342byID = a + b + c;
-	EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
+	// EXPECT_EQ(es.getClassListByLastName("CSS342"), c342byLastName);
+	// a = "[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly ";
+	// b = "(1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans, ";
+	// c = "Juan (1401), Taylor, Alexander (1986)]";
+	// string c342byID = a + b + c;
+	// EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
 
 
 	// option 3  ...? (something else...?)
-
+	string c342byLastName = R""""(
+	[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223),
+	Henderson, Daniel(1364), Taylor, Alexander(1986), Thompson, Christine
+	(1386), Watson, Alex (1211)]
+	)"""";
+	EXPECT_EQ(es.getClassListByLastName("CSS342"), c342byLastName);
+	string c342byID = R""""(
+	[Collins, Cassandra (1070), Watson, Alex (1211), Gonzalez, Holly
+	(1223), Henderson, Daniel (1364), Thompson, Christine (1386), Evans,
+	Juan (1401), Taylor, Alexander (1986)]
+	)"""";
+	EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
 }
