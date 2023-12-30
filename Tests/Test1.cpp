@@ -2,7 +2,7 @@
 // Name        : Test1
 // Test Desc.  : comprehensive testing of the enrollment system (everything)
 // Author      : Yusuf Pisan pisan@uw.edu, Jeffrey Caruso
-// Date    	   : Fall 2023
+// Date    	   : Fall 2023 - Winter 2024
 //==========================================================n==================
 
 #include <gtest/gtest.h>
@@ -20,7 +20,7 @@ using namespace std;
 // check enrollment system (the only & comprehensive test...)
 TEST(Test1, testingOutAddContains)
 {
-	// Initial setup (use assert in gTest)
+	// Initial setup
 	// Assert b/c, if these fail, later items make no sense.
 	EnrollmentSystem es;
 	ASSERT_TRUE(es.addUniversity("UWB"));
@@ -33,14 +33,14 @@ TEST(Test1, testingOutAddContains)
 	ASSERT_EQ(es.getUniversityName(), expectedAns);
 
 
-	// Read data (use assert in gTest)
+	// Read data
 	// Assert b/c, if these fail, later items make no sense.
 	ASSERT_TRUE(es.readCourseList("data-courses.txt"));
 	ASSERT_TRUE(es.readStudentList("data-students.txt"));
 	ASSERT_TRUE(es.readEnrollmentInfo("data-enrollments.txt"));
 
 
-	// Check courses (use expect in gTest)
+	// Check courses
 	// Expect b/c, if these fail, later items could still at least be somewhat informative.
 	EXPECT_FALSE(es.addCourse(999, "CSS342"));
 	EXPECT_FALSE(es.addCourse(1070, "CSS3422"));
@@ -51,7 +51,7 @@ TEST(Test1, testingOutAddContains)
 	EXPECT_EQ(es.getCourseTitle("CSS342"), expectedAns);
 
 
-	// Check enrollments (use expect in gTest)
+	// Check enrollments
 	// Expect b/c, if these fail, later items could still at least be somewhat informative.
 	expectedAns = "[CSS110, CSS173, CSS342]";
 	EXPECT_EQ(es.getEnrolledCourses(1070), expectedAns);
@@ -78,7 +78,7 @@ TEST(Test1, testingOutAddContains)
 	// EXPECT_EQ(es.getClassListByID("CSS342"), c342byID);
 
 
-	// option 3  ...? (something else...?)
+	// option 3  R""""( <string> )"""";
 	string c342byLastName = R""""(
 	[Collins, Cassandra (1070), Evans, Juan (1401), Gonzalez, Holly (1223),
 	Henderson, Daniel(1364), Taylor, Alexander(1986), Thompson, Christine
